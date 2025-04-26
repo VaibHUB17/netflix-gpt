@@ -16,6 +16,17 @@ Currently, two official plugins are available: -->
 
 - create vite react 
 - configure TailwindCSS
+- header 
+- routing of app via react-router-dom
+- Login form 
+- sign up form 
+- Form Validation
+- useRef hook
+- Firebase setup
+- deploying to production
+- create a signup user account
+- impliment Sign In user Api (auth from google firebase docs)
+- Created Redux Store with userSlice (2 cmds for redux than appstore,cartslice and app.jsx)
 
 # features:-
 - Login/sign up 
@@ -40,4 +51,8 @@ Currently, two official plugins are available: -->
 
 # forms handeling 
  - Formik(external library)
- 
+
+
+
+
+<!-- useref is used for refering the value and we faced a issue of form getting submit and data cant be fetch via ref its the issue of web so we used submit prevent default  -->

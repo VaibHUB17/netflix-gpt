@@ -9,7 +9,7 @@ export const Header = () =>
       
 
       <div className='absolute z-1 '>
-      <img className='m-4 ml-10 w-65 h-30 '
+      <img className='m-4 ml-15 w-55 h-25 '
       src={NetflixLogo} alt="Logo"/>
       </div>
 
