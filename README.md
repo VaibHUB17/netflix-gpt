@@ -1,18 +1,6 @@
 # Netflix GPT
 # React + Vite
 
-<!-- This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available: -->
-
-<!-- - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh -->
-
-<!-- ## Expanding the ESLint configuration -->
-
-<!-- If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
- -->
 
 - create vite react 
 - configure TailwindCSS
@@ -27,6 +15,11 @@ Currently, two official plugins are available: -->
 - create a signup user account
 - impliment Sign In user Api (auth from google firebase docs)
 - Created Redux Store with userSlice (2 cmds for redux than appstore,cartslice and app.jsx)
+- Implemented Sign Out 
+- Update Profile
+- BugFix: Sign up user displayName and profile picture Update 
+- BugFix- if the user is not logged in Redirect/ browse to login pafe and vice-versa
+
 
 # features:-
 - Login/sign up 
