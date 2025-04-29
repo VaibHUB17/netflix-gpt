@@ -2,14 +2,19 @@ import React, { useState, useRef } from 'react'
 import { Header } from './Header'
 import BgmImage from "../utils/Loginscreebgm.png"
 import { checkValidateData } from '../utils/Validate'
-import {createUserWithEmailAndPassword ,signInWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../utils/Firebase"
+import {createUserWithEmailAndPassword ,signInWithEmailAndPassword, } from "firebase/auth"
+import { auth } from '../utils/Firebase'
+import { updateProfile } from "firebase/auth"
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../utils/userSlice'
 
 const Login = () => {
       const[IsSignIn,setIsSignIn] = useState(true)
       const [ErrorMessage, setErrorMessage] = useState(null)
       const navigate = useNavigate()
+
+      const dispatch = useDispatch()
 
 
       const name = useRef(null)     
@@ -23,7 +28,7 @@ const Login = () => {
         
         
 
-        const message = checkValidateData(email.current.value, password.current.value)
+        const message = checkValidateData(email.current.value, password.current.value )
         setErrorMessage(message)
 
        if(message) return
@@ -37,6 +42,22 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
+
+            //update the user profile with the name
+            updateProfile(user, {
+              displayName: name.current.value , photoURL: "https://example.com/jane-q-user/profile.jpg"
+            }).then(() => {
+
+                const {uid ,email, displayName} = auth.currentUser;
+                    dispatch(addUser({uid: uid, mail : email, displayName: displayName}))
+              // Profile updated!
+              // ...
+            }).catch((error) => {
+              // An error occurred
+              // ...
+              console.log(error)
+            });
+
             console.log(user)
             navigate("/browse")
             // ...
@@ -59,6 +80,14 @@ const Login = () => {
             // Signed in 
             const user = userCredential.user;
             console.log(user)
+            // Add user to Redux store
+            const {uid, email, displayName} = user;
+            dispatch(addUser({
+              uid: uid, 
+              mail: email, 
+              displayName: displayName,
+              photoURL: ""
+            }))
             navigate("/browse")
             // ...
           })

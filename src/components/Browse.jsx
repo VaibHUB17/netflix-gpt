@@ -1,8 +1,23 @@
 import React from 'react'
 
-export const Browse = () => {
+import Header from './Header'
+
+
+export const Browse = () => { 
+
+
+
+
   return (
-    <div>Browse</div>
+    <div className=''> 
+     <Header/>
+
+
+      
+      
+          
+      
+     </div>
   )
 }
 
